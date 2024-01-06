@@ -11,7 +11,7 @@ import { AuthProvider } from './context/AuthContext';
 import AuthGuard from './guards/AuthGuard';
 import Contact from './components/Contact';
 import Dashboard from './components/Dashboard/Dashboard'
-import ExchangeRateChart from './components/Charts/Highchart'
+import ExchangeRateChart from './components/Charts/HighChartDataFetcher'
 
 function App() {
 
