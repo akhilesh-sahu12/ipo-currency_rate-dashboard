@@ -41,7 +41,7 @@ function Sidebar({ openSidebarToggle, OpenSidebar }) {
           </Link>
         </li>
         <li className="sidebar-list-item">
-          <Link to="/charts">
+          <Link to="/chart">
             <BsBarChartLine className="icon" /> Charts
           </Link>
         </li>

@@ -57,7 +57,7 @@ const Login = () => {
   };
 
   if (logged) {
-    return <Navigate to="/stocks" />;
+    return <Navigate to="/dashboard" />;
   }
 
   return (
