@@ -1,0 +1,70 @@
+/* UpcomingIPOs Component Styles */
+.upcoming-ipos-container {
+    margin-top: 20px;
+    grid-area: main;
+  }
+  
+.upcoming-ipos-container h2 {
+    color: #333;
+  }
+  
+.upcoming-ipos-container p {
+    color: #271818;
+  } 
+  
+  .ipo-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .ipo-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .ipo-card h3 {
+    margin-top: 0;
+    color: #333;
+  }
+  
+  /* Add more styles as needed for additional IPO details */
+  
+  /* CurrencyRates Component Styles */
+  .currency-rates-container {
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    color: #020202;
+  }
+  
+  .currency-rates-container h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #020202;
+  }
+  
+  .currency-rates-container ul {
+    border: 1px solid #ccc;
+    list-style: none;
+    padding: 31px;
+  }
+  
+  .currency-rates-container li {
+    margin-bottom: 8px;
+  }
+  
+  .currency-rates-container li strong {
+    margin-right: 8px;
+  }
+  
+  /* Additional styles specific to the Dashboard component */
+  .dashboard-container {
+    background-color: #f4f4f4; /* Adjust background color as needed */
+    grid-area: main;
+  }
+  

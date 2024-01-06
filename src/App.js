@@ -11,6 +11,7 @@ import { AuthProvider } from './context/AuthContext';
 import AuthGuard from './guards/AuthGuard';
 import Contact from './components/Contact';
 import Dashboard from './components/Dashboard/Dashboard'
+import ExchangeRateChart from './components/Charts/Highchart'
 
 function App() {
 
@@ -31,6 +32,7 @@ function App() {
           <Route path="/register" element={<Registration />} />
           <Route path="/login" element={<Login />} />
           <Route element={<AuthGuard />}>
+          <Route path='/chart' element={<ExchangeRateChart/>}/>
             <Route path='/dashboard' element={<Dashboard/>}/>
           </Route>
           <Route path='/contact' element={<Contact/>}></Route>
