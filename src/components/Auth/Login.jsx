@@ -5,6 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 import "../Auth/Login.css";
 import { useAuth } from "../../context/AuthContext";
 import { Navigate } from "react-router-dom";
+import './Login.css'
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -63,7 +64,7 @@ const Login = () => {
   return (
     <div className="Login">
       <ToastContainer />
-      <h2>Login</h2>
+      <h2>LoginForm</h2>
       <form onSubmit={handleSubmit}>
         <label htmlFor="email">Email:</label>
         <input

@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
-import { Navigate } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -7,7 +9,8 @@ const Contact = () => {
     email: '',
     message: '',
   });
-  const [isSuccesfull, setIsSuccessful]=useState(false);
+  const [isSuccessful, setIsSuccessful] = useState(false);
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -20,17 +23,38 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsSuccessful(true);
-    // We can also add code to send the form data to a server or API
     console.log('Form submitted:', formData);
-    
   };
-  if (isSuccesfull) {
-    return <Navigate to="/" />;
-  }
+
+  useEffect(() => {
+    let timeoutId;
+    if (isSuccessful) {
+      toast.success('Thank you for contacting us!', {
+        position: 'top-right',
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      });
+  
+      // Navigate to the home page after 3000 milliseconds (3 seconds)
+      timeoutId = setTimeout(() => {
+        navigate('/');
+      }, 3000);
+    }
+  
+    // Clear the timeout if the component unmounts before the timeout completes
+    return () => {
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
+    };
+  }, [isSuccessful, navigate]);
 
   return (
     <div className="contact-container">
-      <h1 className='heading-contact'>Contact Us</h1>
+      <h1 className="heading-contact">Contact Us</h1>
       <p>If you have any questions or feedback, feel free to reach out to us!</p>
       <form onSubmit={handleSubmit}>
         <label htmlFor="name">Name:</label>
@@ -62,8 +86,11 @@ const Contact = () => {
           required
         ></textarea>
 
-        <button type="submit" style={{margin:'auto'}}>Submit</button>
+        <button type="submit" style={{ margin: 'auto' }}>
+          Submit
+        </button>
       </form>
+      <ToastContainer />
     </div>
   );
 };

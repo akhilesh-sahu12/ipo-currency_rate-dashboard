@@ -1,19 +1,20 @@
-import React, { useState } from "react";
-import { Link, Navigate } from "react-router-dom";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import "../Auth/Registration.css";
-import { useAuth } from "../../context/AuthContext";
+import React, { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { useAuth } from '../../context/AuthContext';
+import './Registration.css'
 
 const Registration = () => {
   const [formData, setFormData] = useState({
-    username: "",
-    email: "",
-    password: "",
-    confirmPassword: "",
+    username: '',
+    email: '',
+    password: '',
+    confirmPassword: '',
   });
-  const [isSuccessfully, setIsSuccessfully] = useState(false);
-  const { registerUser } = useAuth();
+  const [isSuccessful, setIsSuccessful] = useState(false);
+  const { registerUser } = useAuth(); 
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -23,25 +24,15 @@ const Registration = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (formData.password === formData.confirmPassword) {
-      registerUser(formData);
-      setIsSuccessfully(true);
-      console.log("Form submitted:", formData);
-
-      // Show registration success notification
-      toast.success("Registration successful! Please login.", {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-      });
+      registerUser(formData); 
+      setIsSuccessful(true);
+      console.log('Form submitted:', formData);
     } else {
-      toast.warning("password & confirm password not matching!", {
-        position: "top-right",
+      toast.warning('Password and confirm password do not match!', {
+        position: 'top-right',
         autoClose: 5000,
         hideProgressBar: false,
         closeOnClick: true,
@@ -51,14 +42,37 @@ const Registration = () => {
     }
   };
 
-  if (isSuccessfully) {
-    return <Navigate to="/login" />;
-  }
+  useEffect(() => {
+    let timeoutId;
+    if (isSuccessful) {
+      toast.success('Registration successful! Please login.', {
+        position: 'top-right',
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        onClose: () => {
+          // Navigate to the home page after 3000 milliseconds (3 seconds)
+          timeoutId = setTimeout(() => {
+            navigate('/');
+          }, 3000);
+        },
+      });
+    }
+
+    // Clear the timeout if the component unmounts before the timeout completes
+    return () => {
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
+    };
+  }, [isSuccessful, navigate]);
 
   return (
     <div className="Register">
       <ToastContainer />
-      <h2>Register</h2>
+      <h2>Registration Form</h2>
       <form onSubmit={handleSubmit}>
         <label htmlFor="username">Username:</label>
         <input

@@ -17,12 +17,13 @@ const useIPOsData = () => {
                 setIPOs(data);
             } catch (error) {
                 console.error(error.message);
-                throw error;
+                // Avoid throwing an error here, just log it and let the component handle it
             }
         };
         fetchIPOsData();
     }, []);
-    return IPOs;
+
+    return IPOs || []; // Return an empty array if IPOs is undefined
 };
 
 export default useIPOsData;

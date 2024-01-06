@@ -72,34 +72,6 @@ function Home() {
             The mobile app provides enhanced user experience with mobile-specific features and gestures.
           </p>
         </div>
-        {/* General Information */}
-        <div className="general-info">
-          <p>
-            This dashboard allows you to view upcoming Initial Public Offerings (IPOs) and track the latest currency exchange rates.
-          </p>
-          <p>
-            Utilize the navigation to explore different sections of the dashboard.
-          </p>
-        </div>
-
-        {/* User Features */}
-        <div className="user-features">
-          <h2>User Features</h2>
-          <ul>
-            <li>User Authentication: Log in or register to access personalized features.</li>
-            <li>Upcoming IPO Calendar: View a calendar of upcoming IPOs.</li>
-            <li>Currency Exchange Rates: Track the latest currency rates.</li>
-            <li>Data Refresh: Refresh data periodically or on user request.</li>
-          </ul>
-        </div>
-
-        {/* Mobile Features */}
-        <div className="mobile-features">
-          <h2>Mobile-Specific Features</h2>
-          <p>
-            The mobile app provides enhanced user experience with mobile-specific features and gestures.
-          </p>
-        </div>
     </main>
   );
 }
