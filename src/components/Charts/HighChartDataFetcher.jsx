@@ -3,7 +3,7 @@ import Highchart from './Highchart';
 
 const HighChartDataFetcher = () => {
   const [historicalData, setHistoricalData] = useState([]);
-
+  const [errorMsg, serErrorMsg]=useState("");
   useEffect(() => {
     const fetchHistoricalData = async () => {
       try {
@@ -16,6 +16,7 @@ const HighChartDataFetcher = () => {
         const data = await response.json();
         setHistoricalData(data);
       } catch (error) {
+        serErrorMsg("Error fetching historical data:");
         console.error('Error fetching historical data:', error.message);
       }
     };
@@ -24,9 +25,10 @@ const HighChartDataFetcher = () => {
   }, []);
 
   return (
-    <div style={{ gridArea: 'main' , margin:'35px'}}>
-      <Highchart data={historicalData} />
-    </div>
+    <div data-testid="highchart" style={{ gridArea: 'main', margin: '35px' }}>
+    <Highchart data={historicalData} />
+    <h1>{errorMsg}</h1>
+  </div>
   );
 };
 
