@@ -55,7 +55,7 @@ const Registration = () => {
         onClose: () => {
           // Navigate to the home page after 3000 milliseconds (3 seconds)
           timeoutId = setTimeout(() => {
-            navigate('/');
+            navigate('/login');
           }, 3000);
         },
       });
