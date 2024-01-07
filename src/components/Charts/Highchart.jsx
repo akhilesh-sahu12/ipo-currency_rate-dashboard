@@ -1,21 +1,13 @@
 import React, { useEffect } from 'react';
 import Highcharts from 'highcharts';
 import HCExporting from 'highcharts/modules/exporting';
-import HCAccessibility from 'highcharts/modules/accessibility'; // Import the accessibility module
 
 // Initialize Highcharts modules
 HCExporting(Highcharts);
-HCAccessibility(Highcharts); // Initialize the accessibility module
 
 const Highchart = ({ data }) => {
   // Update chart configuration with fetched data
   const updateChartConfig = (data) => {
-    // Check if data is an array before using the map function
-    if (!Array.isArray(data)) {
-      console.error('Error: Fetched data is not an array:', data);
-      return;
-    }
-
     const chartData = data.map((point) => ({
       x: new Date(point.date).getTime(),
       y: point.rate,
@@ -27,7 +19,7 @@ const Highchart = ({ data }) => {
 
   useEffect(() => {
     if (data && data.length > 0) {
-      updateChartConfig(data);
+      updateChartConfig(data[0]);
     }
   }, [data]);
 

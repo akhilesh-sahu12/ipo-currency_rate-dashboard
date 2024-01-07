@@ -56,7 +56,6 @@
       }
     },
     "coveragePathIgnorePatterns": [
-      "/node_modules/",
       "index.js",
       "reportWebVitals.js"
     ]

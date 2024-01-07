@@ -12,7 +12,7 @@ jest.mock('node-fetch', () => jest.fn(() => Promise.resolve({
 
 // Helper function to simulate a failed fetch
 const mockFetchFailure = () => {
-  jest.spyOn(global, 'fetch').mockImplementationOnce(() => Promise.reject(new Error('Failed to fetch')));
+  jest.spyOn(global, 'fetch').mockImplementationOnce(() => Promise.reject(new Error('Failed to fetch historical data')));
 };
 
 describe('HighChartDataFetcher', () => {
@@ -33,7 +33,7 @@ describe('HighChartDataFetcher', () => {
 
     // Wait for the error message to be displayed
     await waitFor(() => {
-      expect(screen.getByText('Error fetching historical data:')).toBeInTheDocument();
+      expect(screen.getByText('Error fetching historical data: Failed to fetch historical data')).toBeInTheDocument();
     });
 
     // Restore the original fetch implementation
@@ -51,7 +51,7 @@ describe('HighChartDataFetcher', () => {
 
     // Wait for the error message to be displayed
     await waitFor(() => {
-      expect(screen.getByText('Error fetching historical data:')).toBeInTheDocument();
+      expect(screen.getByText('Error fetching historical data: Failed to fetch historical data')).toBeInTheDocument();
     });
 
     // Restore the original fetch implementation

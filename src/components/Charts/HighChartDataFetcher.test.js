@@ -27,7 +27,7 @@ describe('HighChartDataFetcher', () => {
 
     // Wait for the error message to be displayed
     await waitFor(() => {
-      expect(screen.getByText('Error fetching historical data:')).toBeInTheDocument();
+      expect(screen.getByText('Error fetching historical data: Failed to fetch')).toBeInTheDocument();
     });
 
     // Restore the original fetch implementation
