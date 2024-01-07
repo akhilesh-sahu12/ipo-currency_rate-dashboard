@@ -25,6 +25,7 @@
     margin: 10px;
     width: 300px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
   }
   
   .ipo-card h3 {
@@ -61,6 +62,9 @@
   .currency-rates-container li strong {
     margin-right: 8px;
   }
+.refresh-button{
+  margin: 10px;
+}
   
   /* Additional styles specific to the Dashboard component */
   .dashboard-container {
