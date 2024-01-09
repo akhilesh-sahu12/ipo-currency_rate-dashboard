@@ -83,4 +83,15 @@ List the key technologies or frameworks used in your project.
 
 ## Screenshots
 
-![App Screenshot](https://github.com/akhilesh-sahu12/ipo-currency_rate-dashboard/blob/master/screenshots/Coverage/Screenshot%202024-01-07%20130046.png)
+![App Screenshot](https://github.com/akhilesh-sahu12/ipo-currency_rate-dashboard/blob/master/screenshots/Web%20screen/Screenshot%20from%202024-01-09%2020-18-33.png)
+![App Screenshot](https://github.com/akhilesh-sahu12/ipo-currency_rate-dashboard/blob/master/screenshots/Web%20screen/Screenshot%20from%202024-01-09%2020-20-03.png)
+![App Screenshot](https://github.com/akhilesh-sahu12/ipo-currency_rate-dashboard/blob/master/screenshots/Web%20screen/Screenshot%20from%202024-01-09%2020-20-08.png)
+![App Screenshot](https://github.com/akhilesh-sahu12/ipo-currency_rate-dashboard/blob/master/screenshots/Web%20screen/Screenshot%20from%202024-01-09%2020-20-24.png)
+![App Screenshot](https://github.com/akhilesh-sahu12/ipo-currency_rate-dashboard/blob/master/screenshots/Mobile%20screen/Screenshot%20from%202024-01-09%2020-23-20.png)
+![App Screenshot](https://github.com/akhilesh-sahu12/ipo-currency_rate-dashboard/blob/master/screenshots/Mobile%20screen/Screenshot%20from%202024-01-09%2020-24-49.png)
+![App Screenshot](https://github.com/akhilesh-sahu12/ipo-currency_rate-dashboard/blob/master/screenshots/Mobile%20screen/Screenshot%20from%202024-01-09%2020-24-56.png)
+![App Screenshot](https://github.com/akhilesh-sahu12/ipo-currency_rate-dashboard/blob/master/screenshots/Mobile%20screen/Screenshot%20from%202024-01-09%2020-25-07.png)
+![App Screenshot](https://github.com/akhilesh-sahu12/ipo-currency_rate-dashboard/blob/master/screenshots/Coverage/Screenshot%20from%202024-01-09%2020-30-01.png)
+![App Screenshot](https://github.com/akhilesh-sahu12/ipo-currency_rate-dashboard/blob/master/screenshots/TestCases/Screenshot%20from%202024-01-09%2020-31-16.png)
+
+
